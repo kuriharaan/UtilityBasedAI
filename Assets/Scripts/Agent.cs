@@ -3,15 +3,13 @@ using System.Collections;
 
 public class Agent : MonoBehaviour
 {
-    CharacterController characterController;
-
     public enum WayType
     {
         Escalater,
         Stairs,
     }
 
-    public WayType wayType = WayType.Escalater;
+    CharacterController characterController;
 
     void Start ()
     {
@@ -24,7 +22,7 @@ public class Agent : MonoBehaviour
     {
         if( -1.6f > transform.position.z )
         {
-            switch( wayType )
+            switch( GetComponent<DecisionMakingBase>().WayType )
             {
             case WayType.Escalater:
             {

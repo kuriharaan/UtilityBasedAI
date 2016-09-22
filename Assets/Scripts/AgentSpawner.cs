@@ -9,12 +9,19 @@ public class AgentSpawner : MonoBehaviour
     [SerializeField]
     GameObject agentPrefab;
 
+    enum DecisionMakingType
+    {
+        Random,
+        Stairs,
+    }
+
+    [SerializeField]
+    DecisionMakingType decisionMakingType;
 
     float counter = 0.0f;
 
     void Start ()
     {
-
     }
 
     void Update ()
@@ -23,9 +30,17 @@ public class AgentSpawner : MonoBehaviour
         if( interval <= counter )
         {
             var position = transform.position;
-            position.x += Random.Range(-1.5f, 2.0f);
+            position.x += Random.Range(-1.5f, 3.0f);
             var agent = Instantiate(agentPrefab, position, Quaternion.identity) as GameObject;
-            agent.GetComponent<Agent>().wayType = (Agent.WayType)Random.Range(0, 2);
+
+            if( DecisionMakingType.Random  == decisionMakingType )
+            {
+                agent.AddComponent<DecisionMakingRandom>();
+            }
+            else
+            {
+                agent.AddComponent<DecisionMakingUB>();
+            }
 
 
             counter = 0.0f;
