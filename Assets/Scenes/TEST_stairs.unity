@@ -303,6 +303,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4bb0a7b6ca94c5469a9411922b8d15e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  escalaterArea: {fileID: 1081496679}
+  stairsArea: {fileID: 613388650}
+  stairsLength: 5
+  escalaterCapacity: 6
+  stairsCapacity: 20
 --- !u!4 &102354765
 Transform:
   m_ObjectHideFlags: 0
@@ -885,7 +890,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 613388649}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.2, y: 2, z: 1.8}
+  m_LocalPosition: {x: 1.2, y: 2, z: 1}
   m_LocalScale: {x: 4.2, y: 4, z: 7}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -1657,7 +1662,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1081496678}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: 2, z: 1.8}
+  m_LocalPosition: {x: -2, y: 2, z: 1}
   m_LocalScale: {x: 0.6, y: 4, z: 7}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -1844,7 +1849,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interval: 0.5
   agentPrefab: {fileID: 102276, guid: 8834d93f0ca929949be61d98530126cb, type: 2}
-  decisionMakingType: 0
+  decisionMakingType: 1
 --- !u!4 &1156802465
 Transform:
   m_ObjectHideFlags: 0

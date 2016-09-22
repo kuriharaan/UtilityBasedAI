@@ -12,7 +12,7 @@ public class AgentSpawner : MonoBehaviour
     enum DecisionMakingType
     {
         Random,
-        Stairs,
+        SimpleUtilityBased,
     }
 
     [SerializeField]
