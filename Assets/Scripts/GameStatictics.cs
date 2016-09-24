@@ -22,7 +22,8 @@ public class GameStatictics : MonoBehaviour
     {
     }
 
-    void Update ()
+    void OnGUI()
     {
+        GUI.Label(new Rect(10, 10, 300, 60), escalaterArea.NumberOfAgents.ToString());
     }
 }

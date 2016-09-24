@@ -3,11 +3,11 @@ using System.Collections;
 
 public class DecisionMakingUB : DecisionMakingBase
 {
-    void Start ()
+    public override void UpdateDecision()
     {
         float escalaterScore = CalcEscalaterScore();
-        float stairsScore    = CalcStairsScore();
-        if( escalaterScore < stairsScore )
+        float stairsScore = CalcStairsScore();
+        if (escalaterScore < stairsScore)
         {
             WayType = Agent.WayType.Stairs;
         }

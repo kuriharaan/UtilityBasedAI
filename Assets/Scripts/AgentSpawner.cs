@@ -7,6 +7,9 @@ public class AgentSpawner : MonoBehaviour
     float interval;
 
     [SerializeField]
+    float intervalRange;
+
+    [SerializeField]
     GameObject agentPrefab;
 
     enum DecisionMakingType
@@ -22,15 +25,22 @@ public class AgentSpawner : MonoBehaviour
 
     void Start ()
     {
+        ResetCounter();
+    }
+
+    void ResetCounter()
+    {
+        counter = interval + Random.Range(-intervalRange, intervalRange);
     }
 
     void Update ()
     {
-        counter += Time.deltaTime;
-        if( interval <= counter )
+        counter -= Time.deltaTime;
+        if( 0.0f > counter )
         {
+            ResetCounter();
             var position = transform.position;
-            position.x += Random.Range(-1.5f, 3.0f);
+            position.x += Random.Range(-1.0f, 1.0f);
             var agent = Instantiate(agentPrefab, position, Quaternion.identity) as GameObject;
 
             if( DecisionMakingType.Random  == decisionMakingType )
@@ -41,9 +51,6 @@ public class AgentSpawner : MonoBehaviour
             {
                 agent.AddComponent<DecisionMakingUB>();
             }
-
-
-            counter = 0.0f;
         }
     }
 }

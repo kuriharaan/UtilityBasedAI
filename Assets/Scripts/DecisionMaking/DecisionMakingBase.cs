@@ -9,4 +9,6 @@ public class DecisionMakingBase : MonoBehaviour
         get;
         protected set;
     }
+
+    public virtual void UpdateDecision() { }
 }
