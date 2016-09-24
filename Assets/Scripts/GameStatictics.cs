@@ -18,6 +18,9 @@ public class GameStatictics : MonoBehaviour
     [SerializeField]
     public int stairsCapacity;
 
+    [SerializeField]
+    public float stairsLengthMax;
+
     void Start ()
     {
     }

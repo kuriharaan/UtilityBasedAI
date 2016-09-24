@@ -305,9 +305,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   escalaterArea: {fileID: 1081496679}
   stairsArea: {fileID: 613388650}
-  stairsLength: 5
+  stairsLength: 25
   escalaterCapacity: 12
   stairsCapacity: 20
+  stairsLengthMax: 30
 --- !u!4 &102354765
 Transform:
   m_ObjectHideFlags: 0
@@ -1875,7 +1876,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 997b3d69b98f5b34692430ef82fdba80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interval: 3
+  interval: 2
   intervalRange: 0.5
   agentPrefab: {fileID: 102276, guid: 8834d93f0ca929949be61d98530126cb, type: 2}
   decisionMakingType: 1

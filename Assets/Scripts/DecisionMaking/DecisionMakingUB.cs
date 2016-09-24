@@ -29,7 +29,8 @@ public class DecisionMakingUB : DecisionMakingBase
     {
         var statictics = GameObject.FindObjectOfType<GameStatictics>();
         float crowdedness = (float)statictics.stairsArea.NumberOfAgents / (float)statictics.stairsCapacity;
+        float hardships = Mathf.Min(1.0f, statictics.stairsLength / statictics.stairsLengthMax );
         float score = 1.0f - Mathf.Min(crowdedness, 1.0f);
-        return score * score;
+        return ((score * score) + (1.0f - hardships)) * 0.5f;
     }
 }
